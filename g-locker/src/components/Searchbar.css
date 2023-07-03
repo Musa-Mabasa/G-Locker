@@ -1,0 +1,25 @@
+.searchInput{
+    display: flex;
+}
+
+.searchbar input{
+    background-color: #092746;
+    color: white;
+    height: 1rem;
+    width: 100%;
+    border-color: black;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 10px;
+
+
+}
+
+.searchbar button{
+    background-color: #186fbc;
+    padding: 10px;
+    border-color: black;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    cursor: pointer;
+}
