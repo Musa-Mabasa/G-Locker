@@ -31,16 +31,15 @@ body{
 }
 
 .upper-panel{
-    height: 50%;
+    height: 60%;
     margin: 40px 0;
     display: flex;
     
 }
 
 .topGame-image{
-    background-image: red;
     height: 100%;
-    width: 60%;
+    width: 750px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,18 +54,17 @@ body{
     height: 100%;
     border-radius: 40px;
     object-fit: cover;
-
 }
 
 .topGame-details{
     height: 100%;
-    width: 30%;
+    width: 280px;
     
 }
 
 .details{
     background-color: #15202c;
-    height: 55%;
+    height: 70%;
     border-radius: 40px;
 }
 
@@ -80,46 +78,89 @@ body{
 }
 
 .topGame-genres{
-    height: 20%;
+    height: fit-content;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    margin: 0 30px;
 }
 
 .topGame-genres #genre{
-    height: 60%;
-    width: 40%;
+    height: 25px;
+    width: 100px;
     background-color: #1d2c3b;
-    margin: 0 5%;
-    padding: 2px ;
     border-radius: 20px;
     text-align: center;
     color: white;
     font-weight: lighter;
-
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
 }
 
+
 .topGame-platforms{
-    height: 20%;
+    height: 40px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    overflow: hidden;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 0 10px;
+    margin-top: 6px;
 
 }
 
 .topGame-platforms #platform{
-    height: 60%;
-    width: 40%;
+    height: 25px;
+    width: 85px;
     background-color: #1d2c3b;
-    margin: 0 5%;
-    padding: 2px ;
-    text-overflow: ellipsis;
     border-radius: 20px;
     text-align: center;
     color: white;
     font-weight: lighter;
-
+    font-size: 13px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
 }
+
+.topGame-actions{
+    margin: 20px;
+    align-self: center;
+}
+
+#menu{
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    
+    #menu{
+        display: block;
+        height: 100%;
+        top: 1rem;
+        right: 2rem;
+        margin-right: 50px;
+        background-color: transparent;
+    }
+
+    #menu .menu-Icon{
+        font-size: 25px;
+        cursor: pointer;
+        height: 100%;
+        color: #fff;
+        background-color: transparent;
+    }
+
+    
+
+
+  }
 
 

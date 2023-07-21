@@ -1,9 +1,10 @@
 import React from 'react'
 import '../components/Main.css'
-import Searchbar from '../components/Searchbar'
 import img from '../assets/GOW.png'
 // import video from 'https://www.youtube.com/embed/EE-4GvjKcfs'
 import {GameData} from '../components/GameData'
+import Header from '../components/Header';
+import Rating from '../components/Rating';
 
 
 function Home() {
@@ -11,16 +12,10 @@ function Home() {
   var topPlatforms = GameData[0].platform.split(',');
   return (
     <>
-      <div className='header'>
-        <div className='welcome'>Hello, John</div>
-        <div className='search-bar'>
-          <Searchbar placeholder='Search'/>
-        </div>
-      </div>
-      <div></div>
+      
       <div className='upper-panel'>
           <div className='topGame-image'>
-            <img 
+            <img
             src={img}
             />
           </div>
@@ -43,10 +38,11 @@ function Home() {
                           </div>
                 })}
               </div>
+              <div className='topGame-actions'>
+                <Rating/>
+              </div>
             </div>
-            <div className='video'>
-            {/* <iframe width="560" height="315" src={video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
-            </div>
+            
           </div>
       </div>
     </>

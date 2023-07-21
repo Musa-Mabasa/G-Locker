@@ -10,7 +10,7 @@ function Searchbar({placeholder, data}) {
         <input type='text' placeholder={placeholder}/>
         <button><AiIcons.AiOutlineSearch/></button>
       </div>
-      <div className='dataresult'></div>
+      {/* <div className='dataresult'></div> */}
     </div>
   )
 }

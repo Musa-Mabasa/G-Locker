@@ -5,32 +5,38 @@ export const SideBarData = [
     {
         title: 'Home',
         icon: <AiIcons.AiFillHome/>,
-        link: '/'
+        link: '/',
+        color: '#186fbc'
     },
     {
         title: 'New Releases',
         icon: <AiIcons.AiFillPlusSquare/>,
-        link: '/newReleases'
+        link: '/newReleases',
+        color: 'orange',
     },
     {
         title: 'Featured',
         icon: <AiIcons.AiFillStar/>,
-        link: '/featured'
+        link: '/featured',
+        color: 'rgb(156, 32, 32)',
     },
     {
         title: 'Trending',
         icon: <AiIcons.AiFillFire/>,
-        link: '/trending'
+        link: '/trending',
+        color: 'green',
     },
     {
         title: 'Genre',
         icon: <AiIcons.AiFillTags/>,
-        link: '/genre'
+        link: '/genre',
+        color: 'indigo',
     },
     {
         title: 'Platform',
         icon: <AiIcons.AiFillPlayCircle/>,
-        link: '/platform'
+        link: '/platform',
+        color: 'rgb(103, 103, 16)',
     },
 ]
 
