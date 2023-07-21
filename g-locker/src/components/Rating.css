@@ -1,5 +1,30 @@
 .rating-box{
     display: flex;
-    height: 20px;
-    background-color: red;
+    height: 47px;
+    width: 110px;
+    background-color: #1d2c3b;
+    border-radius: 15px;
+}
+
+#rating-icon{
+    font-size: 35px;
+    color: yellow;
+    padding: 6px;
+}
+
+.rating-title{
+    font-size: 14px;
+    color: grey;
+    font-weight: 600;
+    padding: 7px;
+    padding-left: 1px;
+    padding-bottom: 0;
+    align-self: flex-start;
+}
+
+.rating{
+    color: white;
+    font-weight: bold;
+    padding: 2px 4px;
+    font-size: 13px;
 }

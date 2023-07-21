@@ -5,6 +5,7 @@ import img from '../assets/GOW.png'
 import {GameData} from '../components/GameData'
 import Header from '../components/Header';
 import Rating from '../components/Rating';
+import WishlistButton from '../components/WishlistButton';
 
 
 function Home() {
@@ -40,6 +41,7 @@ function Home() {
               </div>
               <div className='topGame-actions'>
                 <Rating/>
+                <WishlistButton/>
               </div>
             </div>
             
