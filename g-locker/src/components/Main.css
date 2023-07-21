@@ -138,9 +138,60 @@ body{
     justify-content: space-between;
 }
 
+.top-game-images{
+    display: flex;
+    margin: 22px;
+    justify-content: space-between;
+}
+
+.first-image{
+    height: 100px;
+    width: 110px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 10px;
+}
+
+.second-image{
+    position: relative;
+    height: 100px;
+    width: 110px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.second-image .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Adjust the alpha (4th value) to control the darkness, 0 is fully transparent, 1 is fully opaque */
+    border-radius: 10px;
+  }
+
+.second-image p{
+    position: absolute;
+    height: fit-content;
+    width: fit-content;
+    align-self: center;
+    margin: 0;
+}
+
 #menu{
     display: none;
 }
+
+
 
 @media screen and (max-width: 768px) {
     

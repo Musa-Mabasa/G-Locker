@@ -5,6 +5,7 @@ import Home from '../pages/Home'
 import NewReleases from '../pages/NewReleases'
 import Trending from '../pages/Trending'
 import Header from './Header'
+import Slideshow from './Slideshow'
 
 
 function Main() {
@@ -18,6 +19,7 @@ function Main() {
                 <Route path='/featured' element={<Featured/>}/>
                 <Route path='/trending' element={<Trending/>}/>
                 <Route path='/trending' element={<Trending/>}/>
+                <Route path='/pictures' element={<Slideshow/>}/>
             </Routes>
         </Router>
     </div>
