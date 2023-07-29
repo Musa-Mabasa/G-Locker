@@ -22,6 +22,19 @@ body{
     
 }
 
+.page-title{
+    color: white;
+    font-size: 50px;
+    font-family: 'Tilt Neon' sans-serif;
+    font-weight: bold;
+    flex: 40%;
+    display: grid;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
 .search-bar{
     flex: 60%;
     place-items: center;
@@ -31,18 +44,22 @@ body{
 }
 
 .upper-panel{
-    height: 60%;
+    height: 350px;
     margin: 40px 0;
     display: flex;
     
 }
 
 .topGame-image{
+    background: url('../assets/GOW.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     height: 100%;
     width: 750px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: flex-start;
     border-radius: 40px;
     margin-right: 3%;
 }
@@ -54,6 +71,18 @@ body{
     height: 100%;
     border-radius: 40px;
     object-fit: cover;
+}
+
+.popular-tag{
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    height: fit-content;
+    width: fit-content;
+    padding: 4px 15px;
+    margin: 20px 40px;
+    border-radius: 20px;
+    background-color: rgb(156, 32, 32);
 }
 
 .topGame-details{
@@ -191,7 +220,12 @@ body{
     display: none;
 }
 
-
+.card-grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 20px;
+}
 
 @media screen and (max-width: 768px) {
     

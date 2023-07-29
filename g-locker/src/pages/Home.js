@@ -7,6 +7,7 @@ import Header from '../components/Header';
 import Rating from '../components/Rating';
 import WishlistButton from '../components/WishlistButton';
 import { Link } from 'react-router-dom';
+import GameCard from '../components/GameCard';
 
 
 function Home() {
@@ -19,11 +20,10 @@ function Home() {
 
   return (
     <>
+      <div className='page-title'>Popular</div>
       <div className='upper-panel'>
           <div className='topGame-image'>
-            <img
-            src={img}
-            />
+            <div className='popular-tag'>Popular</div>
           </div>
           <div className='topGame-details'>
             <div className='details'>
@@ -62,6 +62,11 @@ function Home() {
               </Link>
             </div>
           </div>
+      </div>
+      <div className='card-grid'>
+          {GameData.map((game, index) => (
+            <GameCard key={index} game={game}/>
+          ))}
       </div>
     </>
   )

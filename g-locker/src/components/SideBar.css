@@ -1,6 +1,6 @@
 .sidebar{
     position: relative;
-    height: 100%;
+    height: 100vh;
     width: 300px;
     background-color: #0d171f;
     transition: 0.3s ease-in-out;
