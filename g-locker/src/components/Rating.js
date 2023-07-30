@@ -1,6 +1,7 @@
 import React from 'react'
 import './Rating.css'
 import *  as HiIcons from "react-icons/hi2";
+import * as AiIcons from "react-icons/ai";
 
 function Rating({rating}) {
   return (
@@ -17,7 +18,7 @@ function Rating({rating}) {
         </div>
         <div className='rating'>
             <p>
-                {rating}%
+                {rating ? `${rating}%`  : <AiIcons.AiOutlineDash/>}
             </p>
         </div>
       </div>

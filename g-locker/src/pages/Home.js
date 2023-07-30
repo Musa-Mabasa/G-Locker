@@ -6,18 +6,23 @@ import Rating from '../components/Rating';
 import WishlistButton from '../components/WishlistButton';
 import { Link } from 'react-router-dom';
 import GameCard from '../components/GameCard';
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 import API_KEY from '../models/ApiConfig';
 import api from '../models/ApiURL';
+import GameCardSkeleton from '../components/SkeletonComponents/GameCardSkeleton';
 
 
 
 function Home() {
   const [GameData, setGameData] = useState(null);
+  const [isLoading , setIsLoading] = useState(true);
 
   useEffect(() => {
     api.get(`/games?key=${API_KEY}`)
     .then(res => {
       setGameData(res.data['results']);
+      setIsLoading(false);
     })
     .catch(err => {
       console.log(err);
@@ -26,12 +31,26 @@ function Home() {
 
   return (
     <>
-    { GameData && (
-      <>
     <div className='page-title'>Popular</div>
-      <div className='upper-panel'>
+        <div className='upper-panel'>
+        {isLoading ? (
+          <>
+            <div className='skeleton-top-image-wrapper'>
+              <Skeleton  className='skeleton-top-image'/>
+            </div>
+            <div className='skeleton-top-details-wrapper'>
+              <div className='skeleton-details'>
+                <Skeleton count={3} height={30} width={210} style={{marginBottom: "1.1rem"}} className='skeleton-top-details'/>
+              </div>
+              <div className='skeleton-actions'>
+                <Skeleton height={40} className='skeleton-top-actions'/>
+              </div>
+            </div>
+          </>
+        ):(
+          <>
           <div className='topGame-image' style={{backgroundImage: `url(${GameData[0].background_image})`}}>
-            <div className='popular-tag'>Popular</div>
+          <div className='popular-tag'>Popular</div>
           </div>
           <div className='topGame-details'>
             <div className='details'>
@@ -70,16 +89,22 @@ function Home() {
               </Link>
             </div>
           </div>
-      </div>
+          </>
+          )}
+        </div>
+
       <div className='card-grid'>
-          {GameData && GameData.slice(1).map((game, index) => (
-            <GameCard key={index} game={game}/>
-          ))}
-      </div> 
+        {isLoading ? (
+            Array.from({ length: 8 }).map((_, index) => (
+              <GameCardSkeleton key={index} />
+            ))
+          ) : (
+            GameData.slice(1).map((game, index) => (
+              <GameCard key={index} game={game} />
+            ))
+          )}
+      </div>
       </>
-    )}
-      
-    </>
   )
 }
 
