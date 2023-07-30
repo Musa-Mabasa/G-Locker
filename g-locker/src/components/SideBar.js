@@ -1,9 +1,7 @@
-import React,{useEffect} from 'react'
+import React from 'react'
 import './SideBar.css';
-import * as FaIcons from 'react-icons/fa'
 import * as AiIcons from 'react-icons/ai'
 import {SideBarData} from './SideBarData'
-import {NavLink, useLocation} from 'react-router-dom'
 
 
 function SideBar() {

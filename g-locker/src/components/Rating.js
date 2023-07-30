@@ -2,8 +2,7 @@ import React from 'react'
 import './Rating.css'
 import *  as HiIcons from "react-icons/hi2";
 
-function Rating() {
-    const rating = 60;
+function Rating({rating}) {
   return (
     <div className='rating-box'>
       <div id='rating-icon'>

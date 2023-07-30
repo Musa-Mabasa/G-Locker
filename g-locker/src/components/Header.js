@@ -1,11 +1,9 @@
 import React from 'react'
 import './Header.css';
 import Searchbar from '../components/Searchbar'
-import * as AiIcons from 'react-icons/ai'
 
 
 function Header() {
-    const [clicked, setClicked] = React.useState(false);
 
     const isSlideshow = window.location.pathname === '/pictures';
 

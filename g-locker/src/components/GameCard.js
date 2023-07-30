@@ -1,26 +1,26 @@
 import React from 'react'
 import './GameCard.css'
-import {GameData} from '../components/GameData'
 import Rating from './Rating';
 import WishlistButton from './WishlistButton';
 
-function GameCard() {
-var topGenres = GameData[0].genre.split(',');
+function GameCard({game}) {
+  const placeholderImage = 'https://publicsectornetwork.com/wp-content/uploads/2020/06/placeholder.jpg';
+
   return (
     <div className='game-card'>
-      <div className='card-image'></div>
+      <div className='card-image' style={{backgroundImage: `url(${game.background_image}), url(${placeholderImage})`}}></div>
       <div className='card-details'>
-        <div className='card-title'>God of War: Ragnarok</div>
+        <div className='card-title'>{game.name}</div>
         <div className='card-genres'>
-            {topGenres.map((genre, index) => {
+            {game.genres.map((genre, index) => {
                 return <div key={index} id='genre'>
-                        {genre}
+                        {genre.name}
                         </div>
             })}
         </div>
       </div>
       <div className='card-actions'>
-        <Rating/>
+        <Rating rating={game.metacritic}/>
         <WishlistButton/>
     </div>
     </div>
