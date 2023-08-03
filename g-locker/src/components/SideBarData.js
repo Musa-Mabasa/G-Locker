@@ -1,5 +1,6 @@
 import React from 'react'
 import * as AiIcons from 'react-icons/ai';
+import * as BsIcons from 'react-icons/bs';
 
 export const SideBarData = [
     {
@@ -31,12 +32,51 @@ export const SideBarData = [
         icon: <AiIcons.AiFillTags/>,
         link: '/genre',
         color: 'indigo',
+        subNav: [
+            {
+                title: 'Action',
+                icon: <AiIcons.AiFillTags/>,
+                link: '/genre/action',
+            },
+            {
+                title: 'Adventure',
+                icon: <AiIcons.AiFillTags/>,
+                link: '/genre/adventure',
+            },
+            {
+                title: 'RPG',
+                icon: <AiIcons.AiFillTags/>,
+                link: '/genre/rpg',
+            },
+            {
+                title: 'Sports',
+                icon: <AiIcons.AiFillTags/>,
+                link: '/genre/sports',
+            }
+        ]
     },
     {
         title: 'Platform',
         icon: <AiIcons.AiFillPlayCircle/>,
         link: '/platform',
         color: 'rgb(103, 103, 16)',
+        subNav: [
+            {
+                title: 'PC',
+                icon: <BsIcons.BsMicrosoft/>,
+                link: '/platform/pc',
+            },
+            {
+                title: 'Playstation',
+                icon: <BsIcons.BsPlaystation/>,
+                link: '/platform/playstation',
+            },
+            {
+                title: 'Xbox',
+                icon: <BsIcons.BsXbox/>,
+                link: '/platform/xbox',
+            }
+        ]
     },
 ]
 

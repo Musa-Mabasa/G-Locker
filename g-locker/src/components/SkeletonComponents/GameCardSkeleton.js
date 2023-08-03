@@ -6,12 +6,12 @@ import 'react-loading-skeleton/dist/skeleton.css';
 function GameCardSkeleton() {
   return (
     <div className='skeleton-game-card'>
-        <Skeleton/>
+        <br></br>
       <div className='skeleton-card-image'>
-        <Skeleton height={140} />
+        <Skeleton height={120} />
       </div>
       <div className='skeleton-card-details'>
-        <Skeleton height={20} count={2}/> 
+        <Skeleton height={20} width={250} style={{marginBottom: "1rem"}} count={2}/> 
       </div>
       <div className='skeleton-card-actions'>
         <Skeleton/>

@@ -1,7 +1,5 @@
 import React, { useEffect , useState} from 'react'
 import '../components/Main.css'
-// import video from 'https://www.youtube.com/embed/EE-4GvjKcfs'
-// import {GameData} from '../components/GameData'
 import GameCard from '../components/GameCard';
 import API_KEY from '../models/ApiConfig';
 import api from '../models/ApiURL';
