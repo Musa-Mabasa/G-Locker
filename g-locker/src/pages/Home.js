@@ -58,15 +58,15 @@ function Home() {
                 {GameData[0].name}
               </div>
               <div className='topGame-genres'>
-                {GameData[0].genres.map((genre) => {
-                  return <div id='genre'>
+                {GameData[0].genres.map((genre, index) => {
+                  return <div key={index} id='genre'>
                             {genre.name}
                           </div>
                 })}
               </div>
               <div className='topGame-platforms'>
-                {GameData[0].parent_platforms.map((platform) => {
-                  return <div id='platform'>
+                {GameData[0].parent_platforms.map((platform, index) => {
+                  return <div key={index} id='platform'>
                             {platform['platform'].name}
                           </div>
                 })}
