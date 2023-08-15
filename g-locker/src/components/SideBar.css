@@ -1,7 +1,7 @@
 .sidebar{
     position: relative;
     height: 100vh;
-    width: 300px;
+    width: 250px;
     background-color: #0d171f;
     transition: 0.3s ease-in-out;
     z-index: 2;
@@ -10,12 +10,21 @@
   .sidebar-header{
     display: flex;
     color: white;
-    font-size: 25px;
+    font-size: 15px;
     padding: 15px 40px;
     font-weight:bold;
     gap: 10px;
     white-space: nowrap;
+    margin-bottom: 10px;
   }
+
+  .welcome{
+    display: flex;
+     color: white;
+     font-size: 18px;
+     font-weight:bold;
+     white-space: nowrap;
+ }
   
   .sidebarList{
     height: auto;
@@ -191,11 +200,12 @@
     }
 
     #menu{
-      position: absolute;
       height: fit-content;
       width: fit-content;
       top: 20px;
       left: 20px;
+      padding: 0;
+      margin: 0;
 
     }
 

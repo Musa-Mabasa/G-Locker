@@ -2,7 +2,6 @@ import React from 'react'
 import { Outlet } from 'react-router-dom'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
-import Header from './Header'
 import Featured from '../pages/Featured'
 import Home from '../pages/Home'
 import NewReleases from '../pages/NewReleases'
@@ -10,12 +9,12 @@ import Trending from '../pages/Trending'
 import Slideshow from '../components/Slideshow'
 import Genre from '../pages/Genre'
 import Platform from '../pages/Platform'
+import Search from '../pages/Search'
 
 
-function Main() {
+function Main({clicked, handleClick}) {
   return (
     <div className='main'>
-      <Header/>
       {/* <Outlet/> */}
       <Routes>
         <Route path='/' element={<Home/>}/>
@@ -29,6 +28,7 @@ function Main() {
         <Route path='/platform/pc' element={<Platform platform='PC'/>}/>
         <Route path='/platform/playstation' element={<Platform platform='Playstation'/>}/>
         <Route path='/platform/xbox' element={<Platform platform='Xbox'/>}/>
+        <Route path='/search' element={<Search/>}/>
         <Route path='/pictures' element={<Slideshow/>}/>
     </Routes>
     </div>
