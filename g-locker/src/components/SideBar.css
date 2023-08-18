@@ -4,7 +4,7 @@
     width: 250px;
     background-color: #0d171f;
     transition: 0.3s ease-in-out;
-    z-index: 2;
+    z-index: 3;
   }
   
   .sidebar-header{
@@ -118,6 +118,7 @@
     width: 80%;
     padding: 0;
     margin-left: 50px;
+    transition:  0.3s ease-in-out;
   }
   
   .subMenuList .subMenuRow{

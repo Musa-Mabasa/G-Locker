@@ -1,5 +1,5 @@
 .header {
-  position: fixed;
+  position: absolute;
   /* margin-left: 3.4em; */
   display: flex;
   width: 100%;
@@ -8,6 +8,7 @@
   align-items: center;
   padding: 10px;
   background-color: #0d171f;
+  z-index: 2;
 }
 
 .header-welcome {

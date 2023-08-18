@@ -27,7 +27,7 @@ function Header({clicked, handleClick}) {
             <FcIcons.FcUnlock/>
             <p>G-LOCKER</p>
           </div>
-          <Searchbar placeholder='Search'/>
+          <Searchbar/>
           <div className='buttons'>
             <button className='login-btn'>Login</button>
             <button className='signin-btn'>Sign In</button>

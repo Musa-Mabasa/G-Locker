@@ -1,15 +1,28 @@
 .searchbar {
     width: 400px;
-    margin-right: 20em
+    margin-right: 20em;
   }
   
   .searchInput {
+    position: relative;
     display: flex;
     align-items: center;
+    background-color: #092746;
     border: .5px solid #186fbc;
     border-radius: 20px;
     overflow: hidden;
     height: 40px;
+  }
+
+  .clear-button{
+    position: absolute;
+    right: 65px;
+    background-color: transparent;
+    width: fit-content;
+    height: fit-content;
+    font-size: 20px;
+    color: #fff;
+    /* margin-right: 2px; */
   }
   
   .searchbar input {

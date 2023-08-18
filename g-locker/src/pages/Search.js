@@ -4,15 +4,21 @@ import GameCard from '../components/GameCard';
 import API_KEY from '../models/ApiConfig';
 import api from '../models/ApiURL';
 import GameCardSkeleton from '../components/SkeletonComponents/GameCardSkeleton';
+import { useLocation } from 'react-router-dom';
 
 
 
-function Search({query}) {
+function Search() {
   const [GameData, setGameData] = useState(null);
   const [isLoading , setIsLoading] = useState(true);
 
+  const location = useLocation();
+  const queryParameters = new URLSearchParams(location.search);
+  const query = queryParameters.get('query');
+
   useEffect(() => {
-    api.get(`/games?ordering=released&&key=${API_KEY}`)
+    setIsLoading(true);
+    api.get(`/games?search=${query}&&key=${API_KEY}`)
     .then(res => {
       setGameData(res.data['results']);
       setIsLoading(false);
@@ -20,11 +26,12 @@ function Search({query}) {
     .catch(err => {
       console.log(err);
     })
-  }, [])
+  }, [query])
 
   return (
     <>
-    <div className='page-title'>New Releases</div>
+    {isLoading}
+    <div className='page-title'>Results</div>
     <br></br>
     <br></br>
     <div className='card-grid'>
