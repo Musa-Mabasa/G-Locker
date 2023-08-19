@@ -1,4 +1,5 @@
 const express = require('express')
+const userRoutes = require('./routes/users')
 
 const app = express()
 const port = 3000
@@ -10,8 +11,12 @@ app.listen(port, (error) => {
         console.log(error);
 });
 
-app.get('/user', (req, res) =>{
-    res.status(200);
-    res.send('Hello World');
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 
+app.use((req, res, next) => {
+    next();
 });
+
+app.use('/users', userRoutes);
+
