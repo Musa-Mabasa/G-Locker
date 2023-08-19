@@ -48,7 +48,7 @@ router.post('/register', async (req, res) => {
             return;
         }
 
-        bcrypt.hash(Password, 10, (error, hash) => {
+        bcrypt.hashSync(Password, 10, (error, hash) => {
 
             const sql = 'Insert Into User(UserId, FirstName, LastName, Email, Password) Values(?,?,?,?,?)';
             db.query(sql, [id, FirstName, LastName, Email, hash], (error, results) => {
@@ -68,27 +68,53 @@ router.post('/register', async (req, res) => {
 
 router.post('/login', (req, res) => {
     console.log('POST /users/login');
-    const {Email, Password} = req.body;
-    const sql = 'SELECT * FROM User WHERE Email = ?';
-    db.query(sql, [Email], (error, results) => {
-        if(error){
-            console.log(error);
-            res.sendStatus(500);
-            return;
-        }
-        if(results.length > 0){
-            bcrypt.compare(Password, results[0].Password, (error, result) => {
-                if(result){
-                    res.send(results[0]);
-                }else{
-                    res.sendStatus(401);
-                }
-            });
+    try{
+        const {Email, Password} = req.body;
+        const sql = 'SELECT * FROM User WHERE Email = ?';
+        db.query(sql, [Email], (error, results) => {
+            if(error){
+                console.log(error);
+                res.sendStatus(500);
+                return;
+            }
+            if(results.length > 0){
+                bcrypt.compare(Password, results[0].Password, (error, result) => {
+                    if(result){
+                        res.send(results[0]);
+                    }else{
+                        res.sendStatus(401);
+                    }
+                });
+    
+            }else{
+                res.sendStatus(401);
+            }
+        });
+    }
+    catch(error){
+        res.status(500).send({error: 'Internal Server Error'});
+    }
+   
+});
 
-        }else{
-            res.sendStatus(401);
-        }
-    });
+router.delete('/:id', (req, res) => {
+    console.log('DELETE /users/:id');
+    try{
+        const {id} = req.params;
+        const sql = 'DELETE FROM User WHERE UserId = ?';
+        db.query(sql, [id], (error, results) => {
+            if(error){
+                console.log(error);
+                res.sendStatus(500);
+                return;
+            }
+            res.sendStatus(200);
+        });
+    }
+    catch(error){
+        res.status(500).send({error: 'Internal Server Error'});
+    }
+    
 });
 
 

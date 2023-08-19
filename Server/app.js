@@ -1,8 +1,10 @@
 const express = require('express')
 const userRoutes = require('./routes/users')
+const wishlistRoutes = require('./routes/wishlist')
 
 const app = express()
 const port = 3000
+const cors = require('cors')
 
 app.listen(port, (error) => {
     if(!error)
@@ -11,6 +13,7 @@ app.listen(port, (error) => {
         console.log(error);
 });
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
@@ -19,4 +22,5 @@ app.use((req, res, next) => {
 });
 
 app.use('/users', userRoutes);
+app.use('/wishlist', wishlistRoutes);
 
